@@ -6,26 +6,27 @@ import java.util.Optional;
 
 public class Stack implements StackOperations{
 
-    private final List<String> STACKOFSTRINGS = new ArrayList<>();
+    private final List<String> STACK_OF_STRINGS = new ArrayList<>();
 
     @Override
     public List<String> get() {
-        return STACKOFSTRINGS;
+        return STACK_OF_STRINGS;
     }
 
     @Override
     public Optional<String> pop() {
-        if(STACKOFSTRINGS.isEmpty()) return Optional.empty();
-        else {
-            String top = STACKOFSTRINGS.get(0);
-            STACKOFSTRINGS.remove(0);
+        if(STACK_OF_STRINGS.isEmpty()) {
+            return Optional.empty();
+        } else {
+            String top = STACK_OF_STRINGS.get(0);
+            STACK_OF_STRINGS.remove(0);
             return Optional.of(top);
         }
     }
 
     @Override
     public void push(String item) {
-        STACKOFSTRINGS.add(0,item);
+        STACK_OF_STRINGS.add(0,item);
     }
 
 }
